@@ -14,11 +14,10 @@ public class LocalMaximaRemove {
         int n = array.length;
         int[] result = new int[n];
         int j=0;
-        for (int i=0;i<n;i++,j++){
-            if(array[i]>array[i+1]){
-                result[j]=array[++i];
-            }else{
-                result[j]=array[i];
+        for (int i=0;i<n;i++){
+            if ((i > 0 && array[i] <= array[i - 1])
+                    || (i != array.length - 1 && array[i] <= array[i + 1])){
+                result[j++] = array[i];
             }
         }
         return Arrays.copyOf(result,j);
