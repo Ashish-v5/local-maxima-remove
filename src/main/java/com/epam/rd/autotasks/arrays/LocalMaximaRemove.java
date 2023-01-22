@@ -14,7 +14,7 @@ public class LocalMaximaRemove {
         int n = array.length;
         int[] result = new int[n];
         int j=0;
-        for (int i=0;i<n-1;i++,j++){
+        for (int i=0;i<n;i++,j++){
             if(array[i]>array[i+1]){
                 result[j]=array[++i];
             }else{
